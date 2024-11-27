@@ -1,0 +1,19 @@
+.empty--list {
+    @apply min-h-screen flex items-center justify-center flex-col;
+
+    > .header, > .description {
+        @apply text-center;
+    }
+
+    > .header {
+        @apply text-text-primary font-semibold text-md mb-4px;
+    }
+
+    > .description {
+        @apply text-sm;
+    }
+
+    > .button {
+        @apply text-md mt-24px bg-button-primary-bg border border-button-primary-border text-button-primary-fg py-10px px-14px rounded-md;
+    }
+}
