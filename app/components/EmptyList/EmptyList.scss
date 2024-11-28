@@ -1,5 +1,5 @@
 .empty--list {
-    @apply min-h-screen flex items-center justify-center flex-col;
+    @apply flex items-center justify-center flex-col border border-border-secondary rounded-md my-[2rem] py-24px bg-bg-secondary w-full;
 
     > .header, > .description {
         @apply text-center;
