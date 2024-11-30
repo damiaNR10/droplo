@@ -2,8 +2,6 @@
     @apply ml-auto;
 
     > .button {
-        @apply inline-block py-10px px-16px font-semibold text-text-secondary text-sm bg-bg-primary border border-border-primary;
-
         &.-add {
             @apply rounded-tr-md rounded-br-md;
         }

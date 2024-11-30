@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply font-inter;
+  @apply font-inter bg-bg-body;
 }
 
 .main--content {
   @apply border border-border-primary rounded-md my-[2rem];
+}
+
+.button {
+  @apply inline-block py-10px px-16px font-semibold text-text-secondary text-sm bg-bg-primary border border-border-primary;
+
+  &.-rounded {
+    @apply rounded-md;
+  }
 }
