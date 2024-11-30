@@ -5,3 +5,7 @@
 body {
   @apply font-inter;
 }
+
+.main--content {
+  @apply border border-border-primary rounded-md my-[2rem];
+}
