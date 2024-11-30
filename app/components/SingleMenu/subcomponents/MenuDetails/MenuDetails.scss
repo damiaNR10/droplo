@@ -1,0 +1,11 @@
+.menu--details {
+    @apply flex flex-col gap-xs;
+
+    > .name {
+        @apply text-sm text-text-primary font-semibold;
+    }
+
+    > .url {
+        @apply text-text-tertiary text-sm;
+    }
+}
