@@ -10,18 +10,23 @@ export default {
     extend: {
       margin: {
         "4px": "4px",
+        "8px": "8px",
         "24px": "24px",
       },
       padding: {
+        "8px": "8px",
         "10px": "10px",
+        "12px": "12px",
         "14px": "14px",
         "16px": "16px",
         "20px": "20px",
         "24px": "24px",
+        "64px": "64px",
       },
     },
     borderRadius: {
       md: "0.5rem",
+      none: "0",
     },
     colors: {
       bg: {
