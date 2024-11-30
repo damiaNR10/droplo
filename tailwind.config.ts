@@ -15,6 +15,7 @@ export default {
       padding: {
         "10px": "10px",
         "14px": "14px",
+        "16px": "16px",
         "24px": "24px",
       },
     },
