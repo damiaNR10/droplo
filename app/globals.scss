@@ -16,4 +16,8 @@ body {
   &.-rounded {
     @apply rounded-md;
   }
+
+  &.-colored {
+    @apply border-button-secondary-color-border text-button-secondary-color-fg;
+  }
 }
