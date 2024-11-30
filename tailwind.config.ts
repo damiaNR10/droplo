@@ -16,6 +16,7 @@ export default {
         "10px": "10px",
         "14px": "14px",
         "16px": "16px",
+        "20px": "20px",
         "24px": "24px",
       },
     },
@@ -26,6 +27,7 @@ export default {
       bg: {
         primary: "#FFFFFF",
         secondary: "#F9FAFB",
+        body: "#F5F5F5",
       },
       fg: {
         quaternary: "#667085",
