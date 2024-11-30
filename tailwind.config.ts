@@ -10,7 +10,9 @@ export default {
     extend: {
       margin: {
         "4px": "4px",
+        "6px": "6px",
         "8px": "8px",
+        "20px": "20px",
         "24px": "24px",
       },
       padding: {
@@ -92,6 +94,7 @@ export default {
     },
     gap: {
       xs: "0.25rem",
+      s: "0.5rem;",
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
