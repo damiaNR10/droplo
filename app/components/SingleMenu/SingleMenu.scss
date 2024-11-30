@@ -1,0 +1,7 @@
+.single--menu {
+    @apply px-16px py-24px flex flex-row items-center gap-xs;
+
+    > .move {
+        @apply flex items-center justify-center w-[40px] h-[40px];
+    }
+}
