@@ -1,5 +1,21 @@
 .single--menu {
-    @apply px-16px py-24px flex flex-row items-center gap-xs;
+    @apply py-16px px-24px grid items-center gap-xs bg-bg-primary relative border-border-secondary border-t border-b my-[-1px];
+    grid-template-columns: 40px 1fr auto;
+
+    &:first-of-type {
+        @apply rounded-tl-md rounded-tr-md;
+    }
+
+    &:not(.-level0) {
+        @apply border-l;
+    }
+
+    @for $i from 1 through 10 {
+        &.-level#{$i} {
+            margin-left: calc(#{$i} * 64px);
+            @apply rounded-tl-none rounded-bl-md;
+        }
+    }
 
     > .move {
         @apply flex items-center justify-center w-[40px] h-[40px];
