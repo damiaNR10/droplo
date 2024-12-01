@@ -13,7 +13,7 @@
         @apply text-sm;
     }
 
-    > .button {
+    .button {
         @apply text-md mt-24px bg-button-primary-bg border border-button-primary-border text-button-primary-fg py-10px px-14px rounded-md;
     }
 }
