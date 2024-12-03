@@ -12,6 +12,7 @@ export default {
         "4px": "4px",
         "6px": "6px",
         "8px": "8px",
+        "16px": "16px",
         "20px": "20px",
         "24px": "24px",
       },
@@ -23,7 +24,9 @@ export default {
         "16px": "16px",
         "20px": "20px",
         "24px": "24px",
+        "42px": "42px",
         "64px": "64px",
+        "80px": "80px",
       },
     },
     borderRadius: {
