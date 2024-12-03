@@ -28,7 +28,7 @@ const SingleMenu = ({ menu, menuLevel }: Props) => {
             </div>
             {
                 menu.children && menu.children.length > 0 ?
-                    menu.children.map((submenu, index) => <SingleMenu menuLevel={menuLevel + 1} key={index} menu={submenu} />)
+                    menu.children.map((submenu) => <SingleMenu menuLevel={menuLevel + 1} key={submenu.id} menu={submenu} />)
                     : ''
             }
         </>
