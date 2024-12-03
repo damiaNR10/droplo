@@ -11,8 +11,8 @@ const MenusList = ({ menus }: Props) => {
     return (
         <section className="menus--list">
             {
-                menus.map((menu, index) => (
-                    <SingleMenu menuLevel={0} key={index} menu={menu} />
+                menus.map((menu) => (
+                    <SingleMenu menuLevel={0} key={menu.id} menu={menu} />
                 ))
             }
         </section>
