@@ -16,7 +16,7 @@ type Props = {
 }
 
 const AddForm = ({ menu, parentId, menuLevel, setAddMenuFormVisibility, setEditFormMenuVisibility }: Props) => {
-    const { addMenu, updateMenu } = useMenus() as MenuContextType;
+    const { updateMenu, addMenu } = useMenus() as MenuContextType;
     const { register, formState: { errors }, handleSubmit, getValues, reset } = useForm();
     const Router = useRouter();
 
@@ -59,7 +59,7 @@ const AddForm = ({ menu, parentId, menuLevel, setAddMenuFormVisibility, setEditF
                 <div className="field">
                     <label htmlFor="url" className="label" >Link</label>
                     <input
-                        defaultValue={menu && menu.url ? menu.url : `https://www.google.pl`}
+                        defaultValue={menu && menu.url ? menu.url : ``}
                         className='input -url'
                         id="url" type="text"
                         placeholder="Wklej lub wyszukaj"
