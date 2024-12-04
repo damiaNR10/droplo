@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import { Inter } from 'next/font/google'
+import { MenusProvider } from "@/context/MenusContext";
 
 const inter = Inter({
   weight: ['400', '700'],
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${inter.className}antialiased`}
       >
-        {children}
+        <MenusProvider>
+          {children}
+        </MenusProvider>
       </body>
     </html>
   );
