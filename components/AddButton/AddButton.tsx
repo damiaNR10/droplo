@@ -1,11 +1,15 @@
+import { Dispatch, SetStateAction } from 'react';
 import './AddButton.scss';
-import Link from 'next/link'
 
-const AddButton = () => {
+type Props = {
+    setAddMenuFormVisibility: Dispatch<SetStateAction<boolean>>
+}
+
+const AddButton = ({ setAddMenuFormVisibility }: Props) => {
 
     return (
         <div className="add--button">
-            <Link href={'/add'}><button className="button -rounded">Dodaj pozycję menu</button></Link>
+            <button className="button -rounded" onClick={() => setAddMenuFormVisibility(true)}>Dodaj pozycję menu</button>
         </div>
     )
 }
