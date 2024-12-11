@@ -1,6 +1,8 @@
 "use client"
+import { recursiveAdd, recursiveDelete, recursiveUpdate } from '@/lib/helpers';
 import menus from '@/lib/placeholder-data';
 import { Menu, MenuContextType } from '@/lib/types';
+import { arrayMove } from '@dnd-kit/sortable';
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 
 export const MenuContext = createContext<MenuContextType>({} as MenuContextType);
@@ -27,48 +29,23 @@ export const MenusProvider = ({ children }: { children: ReactNode }) => {
         setMenusList(updatedList);
     }
 
-    const recursiveAdd = (menus: Menu[], menuToAdd: Menu, parentId: string) => {
-        const tmp: Menu[] = menus.reduce((acc: Menu[], cv: Menu) => {
-            if (cv.children && cv.children.length > 0) {
-                cv.children = recursiveAdd(cv.children, menuToAdd, parentId);
-            }
-            if (cv.id === parentId) {
-                return [...acc, { name: cv.name, url: cv.url, id: cv.id, children: cv.children ? [...cv.children, menuToAdd] : [menuToAdd] }]
-            }
-            return [...acc, cv];
-        }, [])
-        return tmp;
+    const getMenuPosition = (id: string) => {
+        return menusList.findIndex(menu => menu.id === id);
     }
 
-    const recursiveUpdate = (menus: Menu[], id: string, newName: string, newUrl: string) => {
-        const tmp: Menu[] = menus.reduce((acc: Menu[], cv: Menu) => {
-            if (cv.children && cv.children.length > 0) {
-                cv.children = recursiveUpdate(cv.children, id, newName, newUrl);
-            }
-            if (cv.id === id) return [...acc, { ...cv, name: newName, url: newUrl }]
-            return [...acc, cv];
-        }, [])
-        return tmp;
-    }
-
-    const recursiveDelete = (id: string, menus: Menu[]) => {
-        const tmp: Menu[] = menus.reduce((acc: Menu[], cv: Menu) => {
-            if (cv.children && cv.children.length > 0) {
-                cv.children = recursiveDelete(id, cv.children);
-            }
-            if (cv.id === id) {
-                return [...acc];
-            } else return [...acc, cv];
-        }, []);
-        return tmp;
+    const changeMenusOrder = (activeId: number, overId: number) => {
+        const a = [activeId, overId];
+        console.debug(a);
+        if (activeId !== overId) {
+            setMenusList((menus) => arrayMove(menus, activeId, overId));
+        }
     }
 
     return (
-        <MenuContext.Provider value={{ menusList, addMenu, deleteMenu, updateMenu }}>
+        <MenuContext.Provider value={{ menusList, changeMenusOrder, addMenu, deleteMenu, updateMenu, getMenuPosition }}>
             {children}
         </MenuContext.Provider>
     );
 };
 
-// Custom hook to use the context
 export const useMenus = () => useContext(MenuContext);
