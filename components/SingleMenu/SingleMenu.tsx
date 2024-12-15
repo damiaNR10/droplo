@@ -26,8 +26,8 @@ const SingleMenu = ({ menu, menuLevel }: Props) => {
     return (
         <>
 
-            <div ref={setNodeRef} style={style} {...attributes} {...listeners} className={`single--menu -level${menuLevel}`}>
-                <button className="move">
+            <div style={style} className={`single--menu -level${menuLevel}`}>
+                <button ref={setNodeRef} {...attributes} {...listeners} className="move">
                     <Image
                         src={IconMove}
                         alt={'Change position'}
