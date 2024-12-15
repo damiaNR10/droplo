@@ -24,7 +24,6 @@ export const MenusProvider = ({ children }: { children: ReactNode }) => {
     }
 
     const updateMenu = (id: string, newName: string, newUrl: string) => {
-        console.log('inside: ', id, newName, newUrl)
         const updatedList = recursiveUpdate(menusList, id, newName, newUrl);
         setMenusList(updatedList);
     }
@@ -34,8 +33,6 @@ export const MenusProvider = ({ children }: { children: ReactNode }) => {
     }
 
     const changeMenusOrder = (activeId: number, overId: number) => {
-        const a = [activeId, overId];
-        console.debug(a);
         if (activeId !== overId) {
             setMenusList((menus) => arrayMove(menus, activeId, overId));
         }
