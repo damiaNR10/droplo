@@ -34,7 +34,6 @@ const AddForm = ({ menu, parentId, menuLevel, setAddMenuFormVisibility, setEditF
     }
 
     const onEdit = () => {
-        console.log('test: ', menu!.id, getValues("name"), getValues("url"));
         updateMenu(menu!.id, getValues("name"), getValues("url"));
         if (setEditFormMenuVisibility) setEditFormMenuVisibility(false)
         else Router.push('/');
@@ -43,7 +42,7 @@ const AddForm = ({ menu, parentId, menuLevel, setAddMenuFormVisibility, setEditF
     return (
         <>
             <form className={`add--form -level${menuLevel}`} onSubmit={menu ? handleSubmit(onEdit) : handleSubmit(onAdd)}>
-                <button onClick={() => { reset({ name: '', url: '' }); console.log('reset') }} className='bin'></button>
+                <button onClick={() => { reset({ name: '', url: '' }) }} className='bin'></button>
                 <div className="field">
                     <label htmlFor="name" className="label" >Nazwa</label>
                     <input
