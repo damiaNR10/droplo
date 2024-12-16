@@ -2,7 +2,6 @@
 import { recursiveAdd, recursiveDelete, recursiveUpdate } from '@/lib/helpers';
 import menus from '@/lib/placeholder-data';
 import { Menu, MenuContextType } from '@/lib/types';
-import { arrayMove } from '@dnd-kit/sortable';
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 
 export const MenuContext = createContext<MenuContextType>({} as MenuContextType);
@@ -28,18 +27,8 @@ export const MenusProvider = ({ children }: { children: ReactNode }) => {
         setMenusList(updatedList);
     }
 
-    const getMenuPosition = (id: string) => {
-        return menusList.findIndex(menu => menu.id === id);
-    }
-
-    const changeMenusOrder = (activeId: number, overId: number) => {
-        if (activeId !== overId) {
-            setMenusList((menus) => arrayMove(menus, activeId, overId));
-        }
-    }
-
     return (
-        <MenuContext.Provider value={{ menusList, changeMenusOrder, addMenu, deleteMenu, updateMenu, getMenuPosition }}>
+        <MenuContext.Provider value={{ menusList, addMenu, deleteMenu, updateMenu, setMenusList }}>
             {children}
         </MenuContext.Provider>
     );
